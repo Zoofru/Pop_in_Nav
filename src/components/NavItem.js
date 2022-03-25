@@ -1,6 +1,9 @@
-const NavItem = () => {
+const NavItem = props => {
+
     return(
-        <div></div>
+        <div className="item">
+            <h3>{props.label}</h3>
+        </div>
     )
 }
 
