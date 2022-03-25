@@ -8,17 +8,30 @@ const Nav = () => {
         hideShowNavButton: {
             width: '2.5vw',
             height: '3vh',
-            border: 'none'
+            border: 'none',
+            float: 'right'
         },
         navContainer: {
-            paddingTop: '5%'
+            paddingTop: '1vh'
+        }
+    }
+
+    const animate = () => {
+        console.log('hi');
+        const btn = document.querySelector('.navStyle')
+        if (btn.classList.contains('animateOpen')) {
+            btn.classList.remove('animateOpen')
+            btn.classList.add('animateClose')
+        } else {
+            btn.classList.remove('animateClose')
+            btn.classList.add('animateOpen')
         }
     }
 
     return (
-        <nav style={Styles.navStyle}>
+        <nav className='navStyle animateClose' style={Styles.navStyle}>
             <div style={Styles.navContainer}>
-                <button className="hideShowNavButton" style={Styles.hideShowNavButton}>{`\u2B9E`}</button>
+                <button className="hideShowNavButton" style={Styles.hideShowNavButton} onClick={animate}>{`\u2B9E`}</button>
             </div>
         </nav>
     )

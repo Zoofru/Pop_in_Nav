@@ -37,6 +37,26 @@
   background-color: lightgray;
 }
 
+.navStyle {
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+}
+
+.animateOpen {
+  animation-name: Nav-open;
+}
+
+@keyframes Nav-open {
+  from {
+    width: 2.5vw;
+  }
+  to {
+    width: 15vw;
+  }
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
