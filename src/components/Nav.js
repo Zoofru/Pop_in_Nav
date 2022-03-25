@@ -17,7 +17,6 @@ const Nav = () => {
     }
 
     const animate = () => {
-        console.log('hi');
         const btn = document.querySelector('.navStyle')
         if (btn.classList.contains('animateOpen')) {
             btn.classList.remove('animateOpen')

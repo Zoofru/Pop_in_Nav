@@ -37,15 +37,19 @@
   background-color: lightgray;
 }
 
-.navStyle {
+.animateClose, .animateOpen {
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-  animation-direction: alternate;
 }
 
 .animateOpen {
   animation-name: Nav-open;
+  animation-fill-mode: forwards;
+}
+
+.animateClose {
+  animation-name: Nav-close;
+  animation-fill-mode: backwards;
 }
 
 @keyframes Nav-open {
@@ -54,6 +58,15 @@
   }
   to {
     width: 15vw;
+  }
+}
+
+@keyframes Nav-close {
+  from {
+    width: 15vw;
+  }
+  to {
+    width: 2.5vw;
   }
 }
 
