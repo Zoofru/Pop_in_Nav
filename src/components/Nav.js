@@ -1,5 +1,13 @@
 import { useState } from "react"
 import NavItem from "./NavItem"
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
+import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
+import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
+import ModeStandbyOutlinedIcon from '@mui/icons-material/ModeStandbyOutlined';
+import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 
 const Nav = () => {
     const [open, setOpen] = useState(false)
@@ -19,26 +27,23 @@ const Nav = () => {
         },
         navContainer: {
             paddingTop: '1vh'
+        },
+        iconStyle : {
+            width: '100%'
         }
     }
 
     const animate = () => {
         const btn = document.querySelector('.navStyle')
-        const navItems = document.querySelectorAll('.item')
+
         if (btn.classList.contains('animateOpen')) {
             btn.classList.remove('animateOpen')
             btn.classList.add('animateClose')
-            navItems.forEach(item => {
-                item.style.display = 'none'
-            })
             setClose(true)
             setOpen(false)
         } else {
             btn.classList.remove('animateClose')
             btn.classList.add('animateOpen')
-            navItems.forEach(item => {
-                item.style.display = 'block'
-            })
             setClose(false)
             setOpen(true)
         }
@@ -50,14 +55,14 @@ const Nav = () => {
                 {close ? <button className="hideShowNavButton" style={Styles.hideShowNavButton} onClick={animate}>{`\u2B9E`}</button> : null}
                 {open ? <button className="hideShowNavButton" style={Styles.hideShowNavButton} onClick={animate}>{`\u2B9C`}</button> : null}
             </div>
-            <NavItem label='Home'></NavItem>
-            <NavItem label='Calendar'></NavItem>
-            <NavItem label='Messages'></NavItem>
-            <NavItem label='Projects'></NavItem>
-            <NavItem label='Progress'></NavItem>
-            <NavItem label='Goals'></NavItem>
-            <NavItem label='Notifications'></NavItem>
-            <NavItem label='Settings'></NavItem>
+            {close ? <HomeOutlinedIcon className="item" style={Styles.iconStyle}/> : <NavItem label='Home'></NavItem>}
+            {close ? <CalendarMonthOutlinedIcon className="item" style={Styles.iconStyle} /> : <NavItem label='Calendar'></NavItem>}
+            {close ? <MessageOutlinedIcon className="item" style={Styles.iconStyle} /> : <NavItem label='Messages'></NavItem>}
+            {close ? <BusinessCenterOutlinedIcon className="item" style={Styles.iconStyle} /> : <NavItem label='Projects'></NavItem>}
+            {close ? <BarChartOutlinedIcon className="item" style={Styles.iconStyle} /> : <NavItem label='Progress'></NavItem>}
+            {close ? <ModeStandbyOutlinedIcon className="item" style={Styles.iconStyle} /> : <NavItem label='Goals'></NavItem>}
+            {close ? <NotificationsOutlinedIcon className="item" style={Styles.iconStyle} /> : <NavItem label='Notifications'></NavItem>}
+            {close ? <SettingsOutlinedIcon className="item" style={Styles.iconStyle} /> : <NavItem label='Settings'></NavItem>}
         </nav>
     )
 }

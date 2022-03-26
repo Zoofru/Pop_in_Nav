@@ -44,8 +44,7 @@ h3 {
 }
 
 .animateClose, .animateOpen {
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
+  animation-duration: .3s;
 }
 
 .animateOpen {
@@ -59,8 +58,7 @@ h3 {
 }
 
 .item {
-  padding: 7% 0%;
-  display: none;
+  padding: 2vh 0%;
   width: 100%;
   text-align: center;
   overflow-x: hidden;
